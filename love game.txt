@@ -1,0 +1,60 @@
+import random
+
+love_truth_questions = [
+    "What was your first impression of your partner?",
+    "What is the most romantic thing your partner has done for you?",
+    "What is your favorite memory together?",
+    "What is the sweetest thing your partner has ever said to you?",
+    "What is one thing you admire most about your partner?",
+    "What do you love most about being in a relationship?"
+]
+
+love_dare_tasks = [
+    "Write a love letter to your partner and read it aloud.",
+    "Give your partner a passionate kiss.",
+    "Plan a surprise date night for your partner.",
+    "Express your love to your partner in a different language.",
+    "Dance with your partner to a romantic song.",
+    "Cook a special meal for your partner."
+]
+
+def get_random_love_truth_question():
+    return random.choice(love_truth_questions)
+
+def get_random_love_dare_task():
+    return random.choice(love_dare_tasks)
+
+def play_game():
+    print("Welcome to Love Truth or Dare!")
+    print("Enter 'q' to quit at any time.\n")
+
+    while True:
+        player1_choice = input("Player 1, choose 'love truth' or 'love dare': ").lower()
+        if player1_choice == 'q':
+            break
+
+        player2_choice = input("Player 2, choose 'love truth' or 'love dare': ").lower()
+        if player2_choice == 'q':
+            break
+
+        if player1_choice == 'love truth':
+            question = get_random_love_truth_question()
+            print("Player 1, here's your love truth question: ", question)
+
+        elif player1_choice == 'love dare':
+            task = get_random_love_dare_task()
+            print("Player 1, here's your love dare: ", task)
+
+        if player2_choice == 'love truth':
+            question = get_random_love_truth_question()
+            print("Player 2, here's your love truth question: ", question)
+
+        elif player2_choice == 'love dare':
+            task = get_random_love_dare_task()
+            print("Player 2, here's your love dare: ", task)
+
+        print()
+
+    print("Thanks for playing Love Truth or Dare!")
+
+play_game()
